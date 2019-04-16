@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+
+
+<!-- Contact Container -->
+<div class="container">
+    
+    <div class="row">
+        <!-- Address information -->
+        <div class="col-md-4">
+            <h2>@ViewData["Title"]</h2>
+            <address>
+                Priory St<br />
+                Coventry<br />
+                CV1 5FB<br />
+                <abbr title="Phone">Phone:</abbr>
+                01210256684
+            </address>
+
+            <address>
+                <strong>Support:</strong> <a href="mailto:Support@example.com">Support@LiquidFlow.com</a><br />
+                <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@LiquidFlow.com</a>
+            </address>
+
+        </div>
+        <div class="col-md-8">
+            <!-- Message box -->
+            <form class="container  col-lg-8" action="/action_page.php" target="_blank">
+                <div>
+                    <label>Name</label>
+                    <input class="input-group" type="text" name="Name" required>
+                </div>
+                <div>
+                    <label>Email</label>
+                    <input class="input-group" type="text" name="Email" required>
+                </div>
+                <div>
+                    <label>Message</label>
+                    <textarea class="input-group" type="text" name="Message" cols="40" rows="4">Enter your message here</textarea>
+                </div>
+                <input class="checkbox" type="checkbox" checked name="Like">
+                <label>I Like it!</label>
+                <button type="submit" class="btn-success">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

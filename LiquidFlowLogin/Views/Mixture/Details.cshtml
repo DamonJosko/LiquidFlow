@@ -1,0 +1,24 @@
+﻿@model LiquidFlowLogin.Models.Mixture
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mixture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MixtureRatio)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MixtureRatio)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MixtureID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

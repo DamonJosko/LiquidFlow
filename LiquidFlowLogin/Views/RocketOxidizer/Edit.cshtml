@@ -1,0 +1,49 @@
+﻿@model LiquidFlowLogin.Models.RocketOxidizer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>RocketOxidizer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RocketOxidizerID" />
+            <div class="form-group">
+                <label asp-for="OxidizerName" class="control-label"></label>
+                <input asp-for="OxidizerName" class="form-control" />
+                <span asp-validation-for="OxidizerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OxidizerAmount" class="control-label"></label>
+                <input asp-for="OxidizerAmount" class="form-control" />
+                <span asp-validation-for="OxidizerAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OxidizerPrice" class="control-label"></label>
+                <input asp-for="OxidizerPrice" class="form-control" />
+                <span asp-validation-for="OxidizerPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BuyCost" class="control-label"></label>
+                <input asp-for="BuyCost" class="form-control" />
+                <span asp-validation-for="BuyCost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

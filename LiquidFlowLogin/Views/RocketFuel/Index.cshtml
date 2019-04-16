@@ -1,0 +1,59 @@
+﻿@model IEnumerable<LiquidFlowLogin.Models.RocketFuel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BuyCost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelType.FuelTypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuyCost)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RocketFuelID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RocketFuelID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RocketFuelID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

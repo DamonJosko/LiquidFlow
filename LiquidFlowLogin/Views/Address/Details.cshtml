@@ -1,0 +1,54 @@
+﻿@model LiquidFlowLogin.Models.Address
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Address</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HouseNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StreetName.StreetNameID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.City.CityID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CountyState)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CountyState.CountyStateID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ZIP)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ZIP.ZIPID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Country.CountryID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AddressID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

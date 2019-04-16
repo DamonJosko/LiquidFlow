@@ -1,0 +1,59 @@
+﻿@model LiquidFlowLogin.Models.Rocket
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Rocket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RocketID" />
+            <div class="form-group">
+                <label asp-for="RocketNameID" class="control-label"></label>
+                <select asp-for="RocketNameID" class="form-control" asp-items="ViewBag.RocketNameID"></select>
+                <span asp-validation-for="RocketNameID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RocketModel" class="control-label"></label>
+                <input asp-for="RocketModel" class="form-control" />
+                <span asp-validation-for="RocketModel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyID" class="control-label"></label>
+                <select asp-for="CompanyID" class="form-control" asp-items="ViewBag.CompanyID"></select>
+                <span asp-validation-for="CompanyID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RocketPropellantID" class="control-label"></label>
+                <select asp-for="RocketPropellantID" class="form-control" asp-items="ViewBag.RocketPropellantID"></select>
+                <span asp-validation-for="RocketPropellantID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PropellantMaxCapacity" class="control-label"></label>
+                <input asp-for="PropellantMaxCapacity" class="form-control" />
+                <span asp-validation-for="PropellantMaxCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PropellantCurrentCapacity" class="control-label"></label>
+                <input asp-for="PropellantCurrentCapacity" class="form-control" />
+                <span asp-validation-for="PropellantCurrentCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

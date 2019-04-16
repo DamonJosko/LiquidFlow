@@ -1,0 +1,90 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@* This is a simple if statement that checks to see if a user is signed in
+    If the user is signed in then it will display the full navigation bar with every controller
+    If the user is not signed in then they will only see the Home controller in the navigation bar*@
+@if (SignInManager.IsSignedIn(User))
+{
+    <ul class="nav navbar-nav">
+        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+        <li class="dropdown">
+            <a asp-area="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Staff<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a asp-area="" asp-controller="FirstName" asp-action="">First Names</a></li>
+                <li><a asp-area="" asp-controller="LastName" asp-action="">Last Names</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="Staff" asp-action="">Staff List</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="StaffAddress" asp-action="">Staff Addresses</a></li>
+            </ul>
+
+        </li>
+        <li class="dropdown">
+            <a asp-area="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a asp-area="" asp-controller="Company" asp-action="">Company List</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="Rocket" asp-action="">Rockets</a></li>
+                <li><a asp-area="" asp-controller="RocketName" asp-action="">Rocket Names</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="CompanyAddress" asp-action="">Company Addresses</a></li>
+            </ul>
+        </li>
+        <li>
+            <a asp-area="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Addresses<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a asp-area="" asp-controller="Address" asp-action="">Address List</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="StreetName" asp-action="">Streets</a></li>
+                <li><a asp-area="" asp-controller="City" asp-action="">Cities</a></li>
+                <li><a asp-area="" asp-controller="CountyState" asp-action="">Counties and States</a></li>
+                <li><a asp-area="" asp-controller="ZIP" asp-action="">ZIP Codes</a></li>
+                <li><a asp-area="" asp-controller="Country" asp-action="">Countries</a></li>
+            </ul>
+        </li>
+        <li>
+            <a asp-area="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Propellants<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a asp-area="" asp-controller="RocketPropellant" asp-action="">Propellant List</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="RocketFuel" asp-action="">Rocket Fuels</a></li>
+                <li><a asp-area="" asp-controller="FuelType" asp-action="">Fuel Types</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="RocketOxidizer" asp-action="">Rocket Oxidizers</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="Mixture" asp-action="">Mixture Ratios</a></li>
+                <li><a asp-area="" asp-controller="SafetyRecord" asp-action="">Safety Records</a></li>
+                <li><a asp-area="" asp-controller="SupplierName" asp-action="">Suppliers</a></li>
+            </ul>
+        </li>
+        <li>
+            <a asp-area="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Orders<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a asp-area="" asp-controller="Order" asp-action="">Order List</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="OrderRocketPropellant" asp-action="">Ordered Propellants</a></li>
+            </ul>
+        </li>
+        <li>
+            <a asp-area="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Delivery<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a asp-area="" asp-controller="DeliveryVehicle" asp-action="">Vehicle List</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a asp-area="" asp-controller="Status" asp-action="">Status</a></li>
+            </ul>
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav">
+        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+    </ul>
+}

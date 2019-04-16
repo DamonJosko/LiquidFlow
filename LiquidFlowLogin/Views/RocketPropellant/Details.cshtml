@@ -1,0 +1,48 @@
+﻿@model LiquidFlowLogin.Models.RocketPropellant
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RocketPropellant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RocketFuel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RocketFuel.RocketFuelID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RocketOxidizer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RocketOxidizer.RocketOxidizerID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Mixture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Mixture.MixtureID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SupplierName.SupplierNameID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SafetyRecord)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SafetyRecord.SafetyRecordID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.RocketPropellantID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

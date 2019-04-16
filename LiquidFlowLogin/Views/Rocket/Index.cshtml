@@ -1,0 +1,65 @@
+﻿@model IEnumerable<LiquidFlowLogin.Models.Rocket>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RocketName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RocketModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RocketPropellant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropellantMaxCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PropellantCurrentCapacity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RocketName.RocketNameID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RocketModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.CompanyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RocketPropellant.RocketPropellantID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropellantMaxCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropellantCurrentCapacity)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RocketID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.RocketID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.RocketID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

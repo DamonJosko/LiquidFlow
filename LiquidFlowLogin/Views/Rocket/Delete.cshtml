@@ -1,0 +1,57 @@
+﻿@model LiquidFlowLogin.Models.Rocket
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Rocket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RocketName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RocketName.RocketNameID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RocketModel)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RocketModel)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Company)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Company.CompanyID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.RocketPropellant)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.RocketPropellant.RocketPropellantID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PropellantMaxCapacity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PropellantMaxCapacity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PropellantCurrentCapacity)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PropellantCurrentCapacity)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="RocketID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

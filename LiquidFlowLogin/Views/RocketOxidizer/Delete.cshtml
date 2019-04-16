@@ -1,0 +1,45 @@
+﻿@model LiquidFlowLogin.Models.RocketOxidizer
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>RocketOxidizer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OxidizerName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OxidizerName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OxidizerAmount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OxidizerAmount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OxidizerPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OxidizerPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BuyCost)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BuyCost)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="RocketOxidizerID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

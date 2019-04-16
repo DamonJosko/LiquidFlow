@@ -1,0 +1,48 @@
+﻿@model LiquidFlowLogin.Models.RocketPropellant
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>RocketPropellant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RocketFuelID" class="control-label"></label>
+                <select asp-for="RocketFuelID" class ="form-control" asp-items="ViewBag.RocketFuelID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="RocketOxidizerID" class="control-label"></label>
+                <select asp-for="RocketOxidizerID" class ="form-control" asp-items="ViewBag.RocketOxidizerID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="MixtureID" class="control-label"></label>
+                <select asp-for="MixtureID" class ="form-control" asp-items="ViewBag.MixtureID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SupplierNameID" class="control-label"></label>
+                <select asp-for="SupplierNameID" class ="form-control" asp-items="ViewBag.SupplierNameID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SafetyRecordID" class="control-label"></label>
+                <select asp-for="SafetyRecordID" class ="form-control" asp-items="ViewBag.SafetyRecordID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
